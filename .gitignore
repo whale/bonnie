@@ -1,19 +1,16 @@
-# OS files
-.DS_Store
+# Screenshots and working files
+*.png
+*.jpg
+*.jpeg
 
-# Editor
-.vscode/
-.idea/
+# Playwright MCP logs
+.playwright-mcp/
 
-# Dependencies (when we pick a stack)
+# Vercel
+.vercel/
+
+# Node
 node_modules/
 
-# Build output
-dist/
-.next/
-out/
-
-# Environment
-.env
-.env.local
-.vercel
+# OS
+.DS_Store
