@@ -51,8 +51,9 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 2.75rem;
+  font-size: 2.25rem;
   margin-bottom: 1.25rem;
+  text-wrap: balance;
 }
 
 h2 {
@@ -102,8 +103,8 @@ section {
 /* Contained background block — not edge-to-edge */
 .block-bg {
   background-color: var(--soft-green);
-  border-radius: 16px;
-  padding: 3.75rem;
+  border-radius: 12px;
+  padding: 2rem;
 }
 
 /* --- Buttons --- */
@@ -502,7 +503,7 @@ footer {
 
 @media (min-width: 768px) {
   h1 {
-    font-size: 3.75rem;
+    font-size: 3.5rem;
   }
 
   h2 {
@@ -518,7 +519,8 @@ footer {
   }
 
   .block-bg {
-    padding: 4.5rem;
+    border-radius: 16px;
+    padding: 3.75rem;
   }
 
   /* Hero — side by side */
@@ -573,5 +575,9 @@ footer {
 
   section {
     padding: 8rem 0;
+  }
+
+  .block-bg {
+    padding: 4.5rem;
   }
 }
