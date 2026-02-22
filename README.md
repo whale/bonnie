@@ -4,7 +4,7 @@ One-page website for a relationship coaching practice. Direct, warm, anti-clich�
 
 ## Status
 
-**Project phase:** Setup — content strategy complete, build not yet started.
+**Project phase:** V1 build complete — content strategy implemented, ready for visual review.
 
 ## What This Is
 
@@ -21,4 +21,6 @@ TBD — not yet decided. See CLAUDE.md for details.
 
 ## How to Run
 
-Not yet applicable. Will be updated once the build starts.
+Open `index.html` in any browser. No server or build step needed.
+
+To preview on mobile, open browser dev tools and toggle device emulation (375px width recommended).

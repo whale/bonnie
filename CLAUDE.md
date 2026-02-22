@@ -33,11 +33,10 @@ The site has 9 sections:
 
 ## Stack
 
-TBD. Decisions to make before building:
-- Static HTML/CSS vs. framework (Next.js, Astro, etc.)
-- Hosting (Vercel, Netlify, etc.)
-- Whether a CMS is needed (probably not for v1)
-- Booking integration (Calendly embed or similar)
+- **Plain HTML + CSS** — no build tools, no framework. Open `index.html` directly in a browser.
+- **Google Fonts** — DM Serif Display (headlines) + Inter (body)
+- **Hosting:** TBD (Vercel, Netlify, or similar static hosting)
+- **Booking integration:** TBD (Calendly embed or similar — CTA buttons currently link to `#contact`)
 
 ## Decisions Made
 

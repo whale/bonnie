@@ -1,0 +1,2 @@
+[    1471ms] [WARNING] Allow attribute will take precedence over 'allowfullscreen'. @ https://www.relationaltherapies.com/:196
+[    2731ms] [ERROR] Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOrigin @ https://vimeo.com/ablincoln/vuid?pid=375e65d5ec9943e6836c3844f48292049ce08ff41771728596:0

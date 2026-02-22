@@ -16,3 +16,4 @@ out/
 # Environment
 .env
 .env.local
+.vercel
