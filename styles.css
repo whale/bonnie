@@ -50,6 +50,10 @@ h1, h2, h3 {
   text-wrap: balance;
 }
 
+.hero h1 {
+  line-height: 1;
+}
+
 h1 {
   font-size: 2.25rem;
   margin-bottom: 1.25rem;
@@ -225,7 +229,10 @@ section {
    SECTION 3 — The Reframe
    ============================================ */
 
-/* Standard section styling, callout handles the 10% highlight */
+/* Reframe — callout sits beside text on desktop */
+.reframe-layout .callout {
+  margin: 2rem 0 0;
+}
 
 /* ============================================
    SECTION 4 — RESET Stepper
@@ -292,6 +299,8 @@ section {
 .section-cta {
   text-align: center;
   margin-top: 3rem;
+  padding-top: 50px;
+  border-top: 1px solid var(--placeholder-border);
 }
 
 /* ============================================
@@ -307,25 +316,18 @@ section {
   color: var(--bg);
 }
 
-.dont-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
+.dont-grid {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1.25rem;
 }
 
-.dont-list li {
-  padding-left: 1.5rem;
-  position: relative;
+.dont-card {
+  border: 1px solid rgba(125, 184, 142, 0.4);
+  border-radius: 8px;
+  padding: 2.5rem;
   line-height: 1.4;
-}
-
-.dont-list li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: #7DB88E;
-  font-weight: 600;
+  background-color: transparent;
 }
 
 /* ============================================
@@ -358,20 +360,23 @@ section {
 
 .quote-card {
   flex-shrink: 0;
-  width: 320px;
+  width: 300px;
   background-color: var(--bg);
   border: 1px solid var(--placeholder-border);
   border-radius: 10px;
-  padding: 2rem;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .quote-card blockquote {
   font-family: var(--font-headline);
   font-weight: 400;
-  font-size: 1.0625rem;
+  font-size: 1.375rem;
   line-height: 1.35;
   color: var(--text);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   border: none;
   padding: 0;
 }
@@ -539,24 +544,44 @@ footer {
     min-width: 240px;
   }
 
-  /* About — side by side */
-  .about-layout {
+  /* Don't Do — 2x2 grid */
+  .dont-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Reframe — side by side */
+  .reframe-layout {
     display: flex;
-    gap: 2.5rem;
+    gap: 3rem;
     align-items: flex-start;
   }
 
-  .about-text {
+  .reframe-text {
     flex: 1;
+  }
+
+  .reframe-layout .callout {
+    flex: 0 0 300px;
+    margin: 0;
+  }
+
+  /* About — side by side, equal columns, image matches text height */
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: stretch;
   }
 
   .lifestyle-placeholder {
     margin: 0;
-    min-width: 220px;
+    width: 100%;
+    max-width: none;
+    aspect-ratio: unset;
   }
 
   .quote-card {
-    width: 380px;
+    width: 340px;
   }
 
   .final-cta h2 {
