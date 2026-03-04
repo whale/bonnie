@@ -3,6 +3,9 @@
 *.jpg
 *.jpeg
 
+# Allow site images
+!images/**
+
 # Playwright MCP logs
 .playwright-mcp/
 
