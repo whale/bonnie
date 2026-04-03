@@ -67,7 +67,7 @@ Node version pinned in `.nvmrc` (v20).
 
 - **GitHub Pages** — deploys from GitHub Actions (not from branch)
 - **Custom domain:** `bonnie-bloom.com` (CNAME managed in Eleventy passthrough)
-- **HTTPS:** Managed by GitHub Pages automatically
+- **HTTPS:** Enforced (HTTP redirects to HTTPS)
 
 ### Rollback
 
@@ -81,6 +81,14 @@ gh api repos/whale/bonnie/pages -X PUT -f build_type=legacy -f source='{"branch"
 git checkout a22ace7 -- index.html   # Last commit with standalone HTML
 git push
 ```
+
+### Security Notes
+
+- **HTTPS enforced** — HTTP requests redirect to HTTPS
+- **GitHub Actions pinned to SHA** — prevents supply chain attacks via compromised action tags
+- **Tailwind loaded via CDN** — known tradeoff; acceptable for this site's risk profile. To harden: replace with a build-time CSS step.
+- **`| safe` filter in template** — renders YAML content as raw HTML. Safe because only trusted editors (Bonnie, Matthew) can edit content. Do not open editing to untrusted users without adding sanitization.
+- **No branch protection** — intentional. Pages CMS commits directly to `main`. Adding branch protection would break the instant-publish flow.
 
 ### Pages CMS
 
