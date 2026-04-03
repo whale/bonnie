@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.meta.title }}</title>
+    <meta name="description" content="{{ site.meta.description | safe }}">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ site.meta.title }}">
+    <meta property="og:description" content="{{ site.meta.og_description }}">
+    <meta property="og:image" content="{{ site.meta.og_image }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ site.meta.title }}">
+    <meta name="twitter:description" content="{{ site.meta.og_description }}">
+    <meta name="twitter:image" content="{{ site.meta.og_image }}">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-primary: #4A7C6F;
+            --color-base: #F5F0E8;
+            --color-accent: #35584F;
+            --color-text: #2D3633;
+            --color-white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--color-text);
+            background-color: var(--color-base);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+            border: 1px solid transparent;
+            padding: 14px 36px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-radius: 0;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+            color: var(--color-white);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--color-text);
+            border: 1px solid var(--color-text);
+            padding: 14px 36px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-radius: 0;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-text);
+            color: var(--color-white);
+        }
+
+        .btn-outline-white {
+            background-color: transparent;
+            color: var(--color-white);
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 14px 36px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-radius: 0;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline-white:hover {
+            background-color: var(--color-white);
+            color: var(--color-accent);
+        }
+
+        /* Nav */
+        .nav-link {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background-color: var(--color-text);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Micro label */
+        .text-micro {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Organic SVG line animation */
+        .organic-line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 5s linear forwards;
+        }
+
+        @keyframes dash {
+            to { stroke-dashoffset: 0; }
+        }
+
+        /* Image hover */
+        .img-zoom-container { overflow: hidden; }
+        .img-zoom {
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .img-zoom-container:hover .img-zoom {
+            transform: scale(1.05);
+        }
+
+        /* RESET stepper */
+        .step-letter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        /* Quotes carousel */
+        .quotes-track {
+            width: 100%;
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+
+        .quotes-scroll {
+            display: flex;
+            gap: 1.5rem;
+            animation: scroll-quotes 50s linear infinite;
+            width: max-content;
+        }
+
+        .quotes-scroll:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll-quotes {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Photo placeholder */
+        .photo-placeholder {
+            background-color: #D6CFC4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9B9488;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: var(--color-accent);
+            z-index: 100;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            color: white;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav class="flex justify-between items-center px-6 md:px-12 py-6 md:py-8 bg-[#F5F0E8]">
+        <div class="hidden md:flex gap-8">
+            <a href="#how-i-work" class="nav-link">How I Work</a>
+            <a href="#about" class="nav-link">About</a>
+        </div>
+
+        <div class="text-2xl md:text-3xl font-bold text-center tracking-tight text-[#2D3633]" style="font-family: 'Playfair Display', serif;">
+            {{ site.nav.site_name }}
+        </div>
+
+        <div class="hidden md:flex gap-8 items-center">
+            <a href="#pricing" class="nav-link">Pricing</a>
+            <a href="{{ site.calendly_url }}" class="nav-link">Book a Call</a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button class="md:hidden text-[#2D3633]" onclick="document.getElementById('mobileMenu').classList.add('active')">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu">
+        <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('active')">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <a href="#how-i-work" onclick="document.getElementById('mobileMenu').classList.remove('active')">How I Work</a>
+        <a href="#about" onclick="document.getElementById('mobileMenu').classList.remove('active')">About</a>
+        <a href="#pricing" onclick="document.getElementById('mobileMenu').classList.remove('active')">Pricing</a>
+        <a href="{{ site.calendly_url }}" onclick="document.getElementById('mobileMenu').classList.remove('active')">Book a Call</a>
+    </div>
+
+    <!-- SECTION 1 — Hero -->
+    <header class="px-4 md:px-8 lg:px-12 pb-4 md:pb-8 lg:pb-12" id="hero">
+        <div class="flex flex-col md:flex-row w-full min-h-[70vh] md:min-h-[80vh]">
+            <!-- Photo (appears below text on mobile, left on desktop) -->
+            <div class="order-2 md:order-1 w-full md:w-1/2 bg-[#D4C4B0] flex items-center justify-center p-8 md:p-12 lg:p-16">
+                <img src="images/bonnie-headshot.jpg" alt="{{ site.hero.headshot_alt }}" class="w-full max-w-md aspect-[3/4] object-cover object-top border-4 border-[#E2D8CC]">
+            </div>
+
+            <!-- Content (appears above photo on mobile, right on desktop) -->
+            <div class="order-1 md:order-2 w-full md:w-1/2 bg-[#4A7C6F] flex flex-col justify-center px-8 md:px-16 lg:px-20 py-16 md:py-20 relative overflow-hidden">
+                <!-- 3 organic lines, edge-to-edge, opposing directions -->
+                <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-25" viewBox="0 0 800 900" fill="none" preserveAspectRatio="none">
+                    <!-- Line 1: left-to-right, gentle S-curve -->
+                    <path d="M-10 250 C 150 200, 300 400, 500 350 S 700 500, 810 420" stroke="white" stroke-width="1.2" class="organic-line"></path>
+                    <!-- Line 2: right-to-left, with a loop-de-loop -->
+                    <path d="M810 550 C 650 500, 550 350, 450 400 C 380 430, 350 320, 400 280 C 450 240, 420 350, 350 380 C 250 430, 100 350, -10 450" stroke="white" stroke-width="1.2" class="organic-line" style="animation-delay: 0.8s;"></path>
+                    <!-- Line 3: left-to-right, lower, gentle wave -->
+                    <path d="M-10 650 C 200 600, 250 720, 450 680 S 650 750, 810 700" stroke="white" stroke-width="1.2" class="organic-line" style="animation-delay: 1.6s;"></path>
+                </svg>
+
+                <div class="relative z-10 text-white">
+                    <span class="text-micro text-white opacity-80">{{ site.hero.micro_label }}</span>
+                    <h1 class="text-4xl md:text-5xl lg:text-7xl mb-8 leading-[1.1]">
+                        {{ site.hero.headline_1 | safe }}<br>
+                        <span class="italic font-light opacity-90">{{ site.hero.headline_2 | safe }}</span>
+                    </h1>
+                    <p class="text-lg md:text-xl font-light leading-relaxed mb-10 max-w-md opacity-90">
+                        {{ site.hero.body | safe }}
+                    </p>
+                    <a href="{{ site.calendly_url }}" class="btn-primary">
+                        {{ site.hero.cta_text }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 2 — Recognition -->
+    <section class="py-24 md:py-32 px-6 bg-[#F5F0E8]" id="recognition">
+        <div class="max-w-xl mx-auto text-center">
+            <span class="text-micro text-[#4A7C6F]">{{ site.recognition.micro_label }}</span>
+            <h2 class="text-3xl md:text-5xl text-[#2D3633] mb-8 leading-tight">
+                {{ site.recognition.headline }}
+            </h2>
+            {% for paragraph in site.recognition.paragraphs %}
+            <p class="text-lg md:text-xl text-[#2D3633]/80 font-light leading-relaxed mb-6">
+                {{ paragraph | safe }}
+            </p>
+            {% endfor %}
+            <p class="text-lg md:text-xl text-[#2D3633] font-medium leading-relaxed">
+                {{ site.recognition.closing | safe }}
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 3 — The Reframe -->
+    <section class="py-24 md:py-32 bg-white relative overflow-hidden" id="reframe">
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3/4 h-[150%] bg-[#4A7C6F]/5 rounded-l-full blur-3xl"></div>
+
+        <div class="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 items-start gap-16">
+            <div>
+                <span class="text-micro text-[#4A7C6F]">{{ site.reframe.micro_label }}</span>
+                <h2 class="text-3xl md:text-5xl mb-8 leading-tight text-[#2D3633]">
+                    {{ site.reframe.headline | safe }}
+                </h2>
+                {% for paragraph in site.reframe.paragraphs %}
+                <p class="text-lg text-[#2D3633]/80 font-light leading-relaxed{% if not loop.last %} mb-6{% endif %}">
+                    {{ paragraph | safe }}
+                </p>
+                {% endfor %}
+            </div>
+
+            <div class="bg-[#F5F0E8] p-10 md:p-14 md:mt-12">
+                <p class="text-xl md:text-2xl text-[#2D3633] leading-relaxed font-light">
+                    {{ site.reframe.callout | safe }}
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4 — How I Work (RESET Framework) -->
+    <section class="bg-[#4A7C6F] text-white py-24 md:py-32 px-6 md:px-12" id="how-i-work">
+        <div class="max-w-6xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row gap-16 items-start">
+            <!-- Left: Intro -->
+            <div class="w-full lg:w-1/2 lg:sticky lg:top-24">
+                <span class="text-micro text-white opacity-80">{{ site.how_i_work.micro_label }}</span>
+                <h2 class="text-3xl md:text-5xl mb-8 leading-tight">
+                    {{ site.how_i_work.headline | safe }}
+                </h2>
+                <p class="mb-8 text-white/80 leading-relaxed text-lg font-light">
+                    {{ site.how_i_work.subtitle }}
+                </p>
+            </div>
+
+            <!-- Right: Steps -->
+            <div class="w-full lg:w-1/2">
+                <div class="flex flex-col gap-0">
+                    {% for step in site.how_i_work.steps %}
+                    <div class="flex gap-5 {% if loop.first %}pb-10 border-b border-white/15{% elif loop.last %}pt-10{% else %}py-10 border-b border-white/15{% endif %}">
+                        <div class="step-letter mt-1">{{ step.number }}</div>
+                        <div>
+                            <h3 class="text-2xl mb-3 text-white">{{ step.title }}</h3>
+                            <p class="text-white/80 leading-relaxed font-light">
+                                {{ step.description | safe }}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="mt-12 pt-10 border-t border-white/15">
+                    <a href="{{ site.calendly_url }}" class="btn-primary">{{ site.how_i_work.cta_text }}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5 — What I Don't Do -->
+    <section class="bg-[#35584F] text-white py-24 md:py-32 px-6" id="what-i-dont-do">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-micro text-white opacity-60">{{ site.what_i_dont_do.micro_label }}</span>
+                <h2 class="text-3xl md:text-5xl leading-tight">
+                    {{ site.what_i_dont_do.headline | safe }}
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {% for card in site.what_i_dont_do.cards %}
+                <div class="border border-white/20 p-8 md:p-10">
+                    <p class="text-lg font-light leading-relaxed text-white/90">
+                        {{ card | safe }}
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6 — Quotes Carousel -->
+    <section class="py-20 md:py-24 bg-[#F5F0E8] overflow-hidden">
+        <div class="quotes-track">
+            <div class="quotes-scroll">
+                {# Render quotes twice for seamless infinite scroll #}
+                {% for i in range(0, 2) %}
+                {% for quote in site.quotes %}
+                <div class="flex-shrink-0 w-[320px] md:w-[380px] bg-white p-8 md:p-10">
+                    <blockquote class="text-xl md:text-2xl leading-snug mb-6 text-[#2D3633]" style="font-family: 'Playfair Display', serif;">
+                        {{ quote.text | safe }}
+                    </blockquote>
+                    <p class="text-sm text-[#2D3633]/60 italic">{{ quote.note | safe }}</p>
+                </div>
+                {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7 — Pricing -->
+    <section class="py-24 md:py-32 px-6 bg-white" id="pricing">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-micro text-[#4A7C6F]">{{ site.pricing.micro_label }}</span>
+                <h2 class="text-3xl md:text-5xl text-[#2D3633] leading-tight">
+                    {{ site.pricing.headline | safe }}
+                </h2>
+            </div>
+
+            <div class="border-t border-[#2D3633]/10">
+                {% for item in site.pricing.items %}
+                <div class="py-6 border-b border-[#2D3633]/10">
+                    <div class="flex justify-between items-baseline">
+                        <span class="font-medium text-[#2D3633]">{{ item.name }}{% if item.duration %} <span class="font-normal text-[#2D3633]/60">({{ item.duration }})</span>{% endif %}</span>
+                        <span class="text-[#4A7C6F] text-3xl md:text-4xl" style="font-family: 'Playfair Display', serif;">{{ item.price }}</span>
+                    </div>
+                    {% if item.description %}
+                    <p class="text-sm text-[#2D3633]/60 mt-2 max-w-[75%]">{{ item.description | safe }}</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+
+            <p class="text-sm text-[#2D3633]/60 mt-8 text-center leading-relaxed max-w-sm mx-auto">
+                {{ site.pricing.footer_note | safe }}
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 8 — About -->
+    <section class="py-24 md:py-32 bg-[#F5F0E8] relative overflow-hidden" id="about">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 items-start gap-12">
+            <div>
+                <span class="text-micro text-[#4A7C6F]">{{ site.about.micro_label }}</span>
+                <h2 class="text-3xl md:text-4xl mb-8 leading-tight text-[#2D3633]">
+                    {{ site.about.headline | safe }}
+                </h2>
+                {% for paragraph in site.about.paragraphs %}
+                <p class="text-lg text-[#2D3633]/80 font-light leading-relaxed {% if loop.last %}mb-8{% else %}mb-6{% endif %}">
+                    {{ paragraph | safe }}
+                </p>
+                {% endfor %}
+
+                <div class="bg-white p-8">
+                    <p class="text-lg text-[#2D3633] leading-relaxed font-light">
+                        {{ site.about.belief | safe }}
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="aspect-[3/4] bg-[#C4856A] absolute -top-4 -right-4 w-full h-full z-0 opacity-30"></div>
+                <div class="bg-[#D4C4B0] p-6 md:p-8 relative z-10">
+                    <img src="images/bonnie-outdoor.png" alt="{{ site.about.outdoor_alt }}" class="w-full aspect-[3/4] object-cover border-4 border-[#E2D8CC]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9 — Final CTA -->
+    <section class="bg-[#4A7C6F] text-white py-24 md:py-32 px-6 relative overflow-hidden" id="contact">
+        <!-- Top-right arcing lines -->
+        <svg class="absolute top-0 right-0 w-full h-56 opacity-10 pointer-events-none" viewBox="0 0 1000 200" preserveAspectRatio="none" fill="none">
+            <path d="M1100 0 Q 750 150 500 0 T -100 0" stroke="white" stroke-width="2"></path>
+            <path d="M1100 0 Q 750 100 500 0 T -100 0" stroke="white" stroke-width="2"></path>
+        </svg>
+
+        <div class="max-w-2xl mx-auto text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl mb-6" style="font-family: 'Playfair Display', serif;">
+                {{ site.final_cta.headline | safe }}
+            </h2>
+            <p class="mb-10 opacity-90 font-light text-lg leading-relaxed max-w-lg mx-auto">
+                {{ site.final_cta.body | safe }}
+            </p>
+            <a href="{{ site.calendly_url }}" class="btn-primary">
+                {{ site.final_cta.cta_text }}
+            </a>
+        </div>
+
+        <!-- Bottom waves -->
+        <svg class="absolute bottom-0 left-0 w-full h-48 opacity-10 pointer-events-none" viewBox="0 0 1000 200" preserveAspectRatio="none">
+            <path d="M0 200 Q 250 50 500 200 T 1000 200" fill="none" stroke="white" stroke-width="2"></path>
+            <path d="M0 200 Q 250 100 500 200 T 1000 200" fill="none" stroke="white" stroke-width="2"></path>
+        </svg>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#F5F0E8] py-16 px-6 border-t border-[#2D3633]/10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-xl font-bold text-[#2D3633]" style="font-family: 'Playfair Display', serif;">
+                {{ site.nav.site_name }}
+            </div>
+
+            <div class="flex gap-8 text-xs font-bold tracking-widest text-[#2D3633]/50 uppercase">
+                <a href="{{ site.footer.instagram_url }}" target="_blank" rel="noopener" class="hover:text-[#4A7C6F] transition-colors">Instagram</a>
+                <a href="mailto:{{ site.footer.email }}" class="hover:text-[#4A7C6F] transition-colors">Contact</a>
+            </div>
+
+            <div class="text-[10px] tracking-widest text-[#2D3633]/40 uppercase">
+                {{ site.footer.copyright | safe }}
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -15,5 +15,8 @@
 # Node
 node_modules/
 
+# Eleventy build output
+_site/
+
 # OS
 .DS_Store

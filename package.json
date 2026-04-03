@@ -1,0 +1,13 @@
+{
+  "name": "bonnie-bloom-coaching",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "3.0.0",
+    "js-yaml": "4.1.0"
+  }
+}

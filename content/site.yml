@@ -1,0 +1,136 @@
+# ============================================
+# Bonnie Bloom Coaching — Site Content
+# Edit this file to update the website.
+# ============================================
+
+# -- Global --
+calendly_url: "https://calendly.com/bonniebloomcoaching/15min-introduction-call"
+
+# -- Meta --
+meta:
+  title: "Bonnie Bloom Coaching — Relationship Coaching"
+  description: "Relationship coaching that's direct, structured, and built on real practice. I help individuals and couples uncover the patterns driving conflict and replace them with something that works."
+  og_description: "Direct, structured relationship coaching for individuals and couples ready to actually change."
+  og_image: "https://bonnie-bloom.com/images/og-image.png"
+
+# -- Navigation --
+nav:
+  site_name: "Bonnie Bloom Coaching"
+
+# -- Hero --
+hero:
+  micro_label: "Relationship Coaching"
+  headline_1: "You're not broken."
+  headline_2: "You're stuck in a&nbsp;pattern."
+  body: "Direct, structured coaching for individuals and couples who are tired of the same fights, the same distance, the same loops — and ready to actually change&nbsp;them."
+  cta_text: "Book a Free 15-Minute Call"
+  headshot_alt: "Bonnie Bloom, relationship coach"
+
+# -- Recognition --
+recognition:
+  micro_label: "Sound familiar?"
+  headline: "This might sound familiar."
+  paragraphs:
+    - "You're lying awake at 2am wondering if your kids can feel the tension. You're single, watching yourself fall into the same relationship with a different person — again, ugh. You're showing up ok at work but your personal life is in&nbsp;shambles."
+    - "Maybe you've tried therapy. It helped for a minute. Then the same patterns came&nbsp;back."
+  closing: "You don't need someone to listen to you vent. You need someone who can see what you can't and help you change&nbsp;it."
+
+# -- Reframe --
+reframe:
+  micro_label: "The Real Problem"
+  headline: "You don't have a communication problem. You have a pattern&nbsp;problem."
+  paragraphs:
+    - "Underneath the fights about dishes and bedtimes and money — or the pattern of choosing the same person in a different body — is a cycle you've been running since long before this relationship."
+    - "These patterns were smart once. What protected you as a kid is now the thing pushing people&nbsp;away."
+  callout: "Here's what surprises people: you don't need a complete overhaul. A small shift in how you show up — how you respond in the hard moments — can change the whole dynamic. It takes less than you&nbsp;think."
+
+# -- How I Work (RESET Framework) --
+how_i_work:
+  micro_label: "The RESET Framework"
+  headline: "This isn't open-ended talk therapy. There's a&nbsp;structure."
+  subtitle: "Grounded in Relational Life Therapy (RLT) — a direct, action-oriented approach developed by Terry Real."
+  cta_text: "Book a Free 15-Minute Call"
+  steps:
+    - number: "1"
+      title: "Reveal"
+      description: "We map what's really going on — the patterns and cycles underneath the surface fights. We name them so you can actually see what you're dealing&nbsp;with."
+    - number: "2"
+      title: "Explore"
+      description: "There are parts of you that don't want to change — and you might not even know they're running the show. We go there. This is where most coaching stops. It's where mine&nbsp;starts."
+    - number: "3"
+      title: "Strengthen"
+      description: "You build the ability to see yourself mid-reaction and choose something different. Real tools. Real practice between&nbsp;sessions."
+    - number: "4"
+      title: "Engage"
+      description: "You learn how to come back — to yourself and to each other. Real accountability, real vulnerability, and the kind of honest conversation most people were never taught how to&nbsp;have."
+    - number: "5"
+      title: "Tend"
+      description: "The relationship becomes a practice — not a problem to be fixed. You don't leave \"cured.\" You leave&nbsp;equipped."
+
+# -- What I Don't Do --
+what_i_dont_do:
+  micro_label: "Honest expectations"
+  headline: "Things I don't&nbsp;do."
+  cards:
+    - "I don't sit quietly and let you vent for an hour. I'm direct — with kindness and respect."
+    - "I'm not a therapist. I don't diagnose conditions or prescribe medication."
+    - "I don't do this work for you. You get real homework. Change requires practice — not just insight."
+    - "I take sides. Not permanently, not unfairly — but I will name what's happening even when it's uncomfortable."
+
+# -- Quotes --
+quotes:
+  - text: "\"I came into this not knowing what to expect. If you had told me this would be the result, I wouldn't have believed you.\""
+    note: "He came as a last resort. He left a different person — not fixed, but equipped."
+  - text: "\"We stopped trying to change each other. That's when everything actually changed.\""
+    note: "A couple who'd been stuck in the same fight for years. Four months of practice shifted it."
+  - text: "\"I finally understood why I kept picking the same partner in different bodies.\""
+    note: "She came in single, thinking the problem was everyone else. The pattern was hers — and she could change it."
+  - text: "\"For the first time, I feel like I have an actual toolkit — not just good intentions.\""
+    note: "He'd done therapy before. This was the first time he left with something to practice."
+  - text: "\"I didn't think a 10% shift would matter. I was wrong.\""
+    note: "They weren't sure it was worth trying. One small change made the whole relationship feel different."
+
+# -- Pricing --
+pricing:
+  micro_label: "Investment"
+  headline: "Simple, straightforward&nbsp;pricing."
+  items:
+    - name: "Free 15-minute intro call"
+      duration: ""
+      price: "Free"
+      description: "We meet briefly so you can ask questions and see if this feels like the right fit. No commitment."
+    - name: "First session"
+      duration: "90 minutes"
+      price: "$175"
+      description: "This is where we dig in, map what's going on, and build a plan together."
+    - name: "Ongoing individual sessions"
+      duration: "50 min"
+      price: "$125"
+      description: ""
+    - name: "Ongoing couples sessions"
+      duration: "50 min"
+      price: "$150"
+      description: ""
+  footer_note: "I work with clients virtually and can work across state lines. Sessions are typically weekly or biweekly. This work has a direction and a pace — it's not years on a couch wondering if anything's changing."
+
+# -- About --
+about:
+  micro_label: "About Bonnie"
+  headline: "I didn't become a coach because I read about it in a textbook. It's&nbsp;personal."
+  paragraphs:
+    - "Every chapter of this work started with something breaking open in my own life — a health crisis, the loss of my son, and personal relational pain that led me to Relational Life Therapy."
+    - "I've led 30-day immersive retreat programs around the world, coached over 250 people one-on-one, and lived through every pattern I now help my clients see in themselves. That's not a pitch. It's just the truth."
+  belief: "<strong class=\"font-medium\">What I believe:</strong> People are whole. Almost no one was taught how to be in a healthy relationship. That's not a character flaw. It's a skill gap. And skills can be learned."
+  outdoor_alt: "Bonnie outdoors"
+
+# -- Final CTA --
+final_cta:
+  headline: "You don't have to keep doing this&nbsp;alone."
+  body: "Book a free 15-minute call. I'll share how I work, you'll ask your questions, and we'll both know if it's the right fit. No pressure, no pitch."
+  cta_text: "Book Your Free Call"
+
+# -- Footer --
+footer:
+  instagram_url: "https://www.instagram.com/bonniebloomcoaching/"
+  email: "bonniebloomcoaching@gmail.com"
+  copyright: "&copy; 2026 Bonnie Bloom Coaching. All Rights Reserved."
