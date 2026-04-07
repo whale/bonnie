@@ -45,8 +45,12 @@ reframe:
 how_i_work:
   micro_label: The RESET Framework
   headline: This isn't open-ended talk therapy. There's a&nbsp;structure.
-  subtitle: Grounded in Relational Life Therapy (RLT) — a direct, action-oriented
-    approach developed by Terry Real.
+  subtitle: >-
+    Relational Life Therapy (RLT) is a direct, action-oriented approach
+    developed by Terry Real that goes beyond traditional talk therapy. Instead
+    of circling the problem, RLT names it — and gives you the tools to change
+    it. I'm a <a href="https://placid-fra.fra1.digitaloceanspaces.com/production/rest-images/h9wuwuwpay6t0/pdf-7b413c12ea5b119bff995153fb9b2ecc.pdf" target="_blank" rel="noopener" class="underline underline-offset-4 decoration-white/40 hover:decoration-white transition-colors">Certified RLT Relational Coach</a>,
+    trained in this framework and committed to&nbsp;it.
   cta_text: Book a Free 15-Minute Call
   steps:
     - number: "1"
@@ -138,6 +142,8 @@ about:
   belief: <strong class="font-medium">What I believe:</strong> People are whole.
     Almost no one was taught how to be in a healthy relationship. That's not a
     character flaw. It's a skill gap. And skills can be learned.
+  certification_label: Certified RLT Relational Coach
+  certification_url: https://placid-fra.fra1.digitaloceanspaces.com/production/rest-images/h9wuwuwpay6t0/pdf-7b413c12ea5b119bff995153fb9b2ecc.pdf
   outdoor_alt: Bonnie outdoors
 final_cta:
   headline: You don't have to keep doing this&nbsp;alone.

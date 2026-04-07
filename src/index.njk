@@ -384,7 +384,7 @@
                     {{ site.how_i_work.headline | safe }}
                 </h2>
                 <p class="mb-8 text-white/80 leading-relaxed text-lg font-light">
-                    {{ site.how_i_work.subtitle }}
+                    {{ site.how_i_work.subtitle | safe }}
                 </p>
             </div>
 
@@ -501,6 +501,11 @@
                         {{ site.about.belief | safe }}
                     </p>
                 </div>
+
+                <a href="{{ site.about.certification_url }}" target="_blank" rel="noopener" class="mt-8 flex items-center gap-4 group">
+                    <img src="images/rlt-badge.png" alt="Certified RLT Relational Coach badge" class="w-[104px] h-[104px] object-contain">
+                    <span class="text-sm font-bold tracking-widest uppercase text-[#2D3633]/60 group-hover:text-[#4A7C6F] transition-colors">{{ site.about.certification_label }}</span>
+                </a>
             </div>
 
             <div class="relative">
@@ -541,17 +546,23 @@
 
     <!-- Footer -->
     <footer class="bg-[#F5F0E8] py-16 px-6 border-t border-[#2D3633]/10">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-xl font-bold text-[#2D3633]" style="font-family: 'Playfair Display', serif;">
-                {{ site.nav.site_name }}
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-6 mb-8">
+                <div class="text-xl font-bold text-[#2D3633] text-center md:text-left" style="font-family: 'Playfair Display', serif;">
+                    {{ site.nav.site_name }}
+                </div>
+
+                <div class="flex items-center justify-center gap-8 text-xs font-bold tracking-widest text-[#2D3633]/50 uppercase">
+                    <a href="{{ site.footer.instagram_url }}" target="_blank" rel="noopener" class="hover:text-[#4A7C6F] transition-colors">Instagram</a>
+                    <a href="mailto:{{ site.footer.email }}" class="hover:text-[#4A7C6F] transition-colors">Contact</a>
+                </div>
+
+                <a href="{{ site.about.certification_url }}" target="_blank" rel="noopener" class="hover:opacity-80 transition-opacity flex justify-center md:justify-end">
+                    <img src="images/rlt-badge.png" alt="Certified RLT Relational Coach" class="w-[76px] h-[76px] object-contain">
+                </a>
             </div>
 
-            <div class="flex gap-8 text-xs font-bold tracking-widest text-[#2D3633]/50 uppercase">
-                <a href="{{ site.footer.instagram_url }}" target="_blank" rel="noopener" class="hover:text-[#4A7C6F] transition-colors">Instagram</a>
-                <a href="mailto:{{ site.footer.email }}" class="hover:text-[#4A7C6F] transition-colors">Contact</a>
-            </div>
-
-            <div class="text-[10px] tracking-widest text-[#2D3633]/40 uppercase">
+            <div class="text-center text-[10px] tracking-widest text-[#2D3633]/40 uppercase">
                 {{ site.footer.copyright | safe }}
             </div>
         </div>
