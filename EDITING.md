@@ -23,7 +23,7 @@ Your change goes live in about 60 seconds. Refresh your site to see it.
 
 | Section | What's there |
 |---|---|
-| **Booking Link** | Your Calendly URL (used on every button) |
+| **Booking Link** | Your booking URL (used on every button) |
 | **SEO & Sharing** | Page title, description, social media preview |
 | **Hero Section** | Main headline, body text, button text |
 | **Recognition** | "This might sound familiar" section |
@@ -34,7 +34,7 @@ Your change goes live in about 60 seconds. Refresh your site to see it.
 | **Pricing** | Service names, durations, prices, descriptions |
 | **About** | Your bio, belief statement |
 | **Final Call to Action** | Bottom section headline and body |
-| **Footer** | Instagram link, email, copyright |
+| **Footer** | Instagram, email, phone number, in-person availability and address, copyright |
 
 ## Updating Photos
 

@@ -1,4 +1,4 @@
-calendly_url: https://calendly.com/bonniebloomcoaching/15min-introduction-call
+calendly_url: https://bonnie-bloom.clientsecure.me
 meta:
   title: Bonnie Bloom Coaching — Relationship Coaching
   description: Relationship coaching that's direct, structured, and built on real
@@ -125,9 +125,11 @@ pricing:
     - name: Ongoing couples sessions
       duration: 50 min
       price: $150
-  footer_note: I work with clients virtually and can work across state lines.
-    Sessions are typically weekly or biweekly. This work has a direction and a
-    pace — it's not years on a couch wondering if anything's changing.
+  footer_note: I work with clients virtually and can work across state lines. I
+    also see clients in person on Wednesdays at Santé Vie, 1613 E North St, Ste
+    101, Greenville, SC 29607. Sessions are typically weekly or biweekly. This
+    work has a direction and a pace — it's not years on a couch wondering if
+    anything's changing.
 about:
   micro_label: About Bonnie
   headline: I didn't become a coach because I read about it in a textbook.
@@ -153,4 +155,8 @@ final_cta:
 footer:
   instagram_url: https://www.instagram.com/bonniebloomcoaching/
   email: bonniebloomcoaching@gmail.com
+  phone: 864.625.3471
+  phone_url: tel:+18646253471
+  in_person_note: In-person Wednesdays
+  address: Santé Vie, 1613 E North St, Ste 101, Greenville, SC 29607
   copyright: "&copy; 2026 Bonnie Bloom Coaching. All Rights Reserved."

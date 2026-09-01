@@ -535,6 +535,16 @@
             <a href="{{ site.calendly_url }}" class="btn-primary">
                 {{ site.final_cta.cta_text }}
             </a>
+            <div class="mt-10 pt-8 border-t border-white/20 text-sm leading-relaxed text-white/80">
+                <p>
+                    Call or text
+                    <a href="{{ site.footer.phone_url }}" class="text-white underline underline-offset-4 decoration-white/40 hover:decoration-white transition-colors">{{ site.footer.phone }}</a>
+                </p>
+                <p class="mt-2">
+                    {{ site.footer.in_person_note }} at<br>
+                    {{ site.footer.address }}
+                </p>
+            </div>
         </div>
 
         <!-- Bottom waves -->
@@ -555,6 +565,7 @@
                 <div class="flex items-center justify-center gap-8 text-xs font-bold tracking-widest text-[#2D3633]/50 uppercase">
                     <a href="{{ site.footer.instagram_url }}" target="_blank" rel="noopener" class="hover:text-[#4A7C6F] transition-colors">Instagram</a>
                     <a href="mailto:{{ site.footer.email }}" class="hover:text-[#4A7C6F] transition-colors">Contact</a>
+                    <a href="{{ site.footer.phone_url }}" class="hover:text-[#4A7C6F] transition-colors">{{ site.footer.phone }}</a>
                 </div>
 
                 <a href="{{ site.about.certification_url }}" target="_blank" rel="noopener" class="hover:opacity-80 transition-opacity flex justify-center md:justify-end">

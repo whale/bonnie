@@ -10,7 +10,7 @@ content:
     fields:
       # -- Global --
       - name: calendly_url
-        label: Booking Link (Calendly URL)
+        label: Booking Link
         type: string
 
       # -- Meta --
@@ -242,6 +242,18 @@ content:
             type: string
           - name: email
             label: Email Address
+            type: string
+          - name: phone
+            label: Phone Number (display)
+            type: string
+          - name: phone_url
+            label: Phone Link (starts with tel:)
+            type: string
+          - name: in_person_note
+            label: In-Person Availability
+            type: string
+          - name: address
+            label: In-Person Address
             type: string
           - name: copyright
             label: Copyright Text
